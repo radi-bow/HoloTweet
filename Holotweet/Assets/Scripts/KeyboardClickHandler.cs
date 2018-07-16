@@ -5,6 +5,7 @@ using UnityEngine;
 public class KeyboardClickHandler : MonoBehaviour, IInputClickHandler
 {
     public TextMesh textMesh;
+    public GetTweet getTweet;
 
     public void OnInputClicked(InputClickedEventData eventData)
     {
@@ -21,6 +22,7 @@ public class KeyboardClickHandler : MonoBehaviour, IInputClickHandler
     }
     private void KeyboardOnClosed(object sender, EventArgs eventArgs)
     {
+        getTweet.SearchTweet(textMesh.text);
         Keyboard.Instance.OnTextUpdated -= KeyboardOnTextUpdated;
         Keyboard.Instance.OnClosed -= KeyboardOnClosed;
     }

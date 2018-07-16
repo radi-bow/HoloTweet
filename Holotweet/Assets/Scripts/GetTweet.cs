@@ -39,7 +39,7 @@ public class GetTweet : MonoBehaviour {
     {
         Dictionary<string, string> parameters = new Dictionary<string, string>();
         parameters["count"] = 4.ToString();
-        parameters["screen_name"] = "radi_bow";
+        parameters["screen_name"] = s;
         StartCoroutine(Twity.Client.Get("statuses/user_timeline", parameters, Callback));
     }
 }
