@@ -19,12 +19,12 @@ public class KeyboardClickHandler : MonoBehaviour, IInputClickHandler
     }
     private void KeyboardOnTextUpdated(string s)
     {
-        textMesh.text = s;
+        textMesh.text = "@" + s;
         getTweet.SearchTweet(s);
     }
     private void KeyboardOnClosed(object sender, EventArgs eventArgs)
     {
-        GameObject account = Instantiate(virtualAccount, new Vector3(-0.1f, 0, 2.0f), Quaternion.identity);
+        GameObject account = Instantiate(virtualAccount, new Vector3(-0.5f, 0, 2.0f), Quaternion.identity);
         account.transform.Find("Tweet1").GetComponent<TextMesh>().text = getTweet.tweets[0];
         account.transform.Find("Tweet2").GetComponent<TextMesh>().text = getTweet.tweets[1];
         account.transform.Find("Tweet3").GetComponent<TextMesh>().text = getTweet.tweets[2];

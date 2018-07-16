@@ -28,7 +28,17 @@ public class GetTweet : MonoBehaviour {
             StatusesHomeTimelineResponse Response = JsonUtility.FromJson<StatusesHomeTimelineResponse>(response);
             for(int i = 0;i< 4; i++)
             {
-                tweets[i] = Response.items[i].text;
+                string rawString = Response.items[i].text;
+                string tweet = "";
+                for(int j = 0;j< rawString.Length; j++)
+                {
+                    tweet += rawString[j];
+                    if(j % 10 == 9)
+                    {
+                        tweet += "\n";
+                    }
+                }
+                tweets[i] = tweet;
             }
         }
         else
