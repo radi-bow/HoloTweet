@@ -24,7 +24,7 @@ public class GetTweet : MonoBehaviour {
         if (success)
         {
             StatusesHomeTimelineResponse Response = JsonUtility.FromJson<StatusesHomeTimelineResponse>(response);
-            for(int i = 0;i< 30; i++)
+            for(int i = 0;i< 4; i++)
             {
                 Debug.Log(Response.items[i].text);
             }
@@ -33,6 +33,14 @@ public class GetTweet : MonoBehaviour {
         {
             Debug.Log(response);
         }
+    }
+
+    public void SearchTweet(string s)
+    {
+        Dictionary<string, string> parameters = new Dictionary<string, string>();
+        parameters["count"] = 4.ToString();
+        parameters["screen_name"] = "radi_bow";
+        StartCoroutine(Twity.Client.Get("statuses/user_timeline", parameters, Callback));
     }
 }
 
