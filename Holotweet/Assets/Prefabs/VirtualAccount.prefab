@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 23851382345487286}
   m_Layer: 0
   m_Name: icon
-  m_TagString: Untagged
+  m_TagString: Account
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -105,9 +105,10 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4174611975062910}
+  - component: {fileID: 114804444821075264}
   m_Layer: 0
   m_Name: VirtualAccount
-  m_TagString: Untagged
+  m_TagString: Account
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -468,3 +469,14 @@ TextMesh:
   m_Color:
     serializedVersion: 2
     rgba: 4294967295
+--- !u!114 &114804444821075264
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1666404136518374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40c15fa364b9280439f7f6d3e826571e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
