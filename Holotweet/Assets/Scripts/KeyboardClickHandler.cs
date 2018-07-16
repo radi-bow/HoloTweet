@@ -6,6 +6,7 @@ public class KeyboardClickHandler : MonoBehaviour, IInputClickHandler
 {
     public TextMesh textMesh;
     public GetTweet getTweet;
+    public GameObject virtualAccount;
 
     public void OnInputClicked(InputClickedEventData eventData)
     {
@@ -19,10 +20,20 @@ public class KeyboardClickHandler : MonoBehaviour, IInputClickHandler
     private void KeyboardOnTextUpdated(string s)
     {
         textMesh.text = s;
+        getTweet.SearchTweet(s);
     }
     private void KeyboardOnClosed(object sender, EventArgs eventArgs)
     {
-        getTweet.SearchTweet(textMesh.text);
+        GameObject account = Instantiate(virtualAccount, new Vector3(-0.1f, 0, 2.0f), Quaternion.identity);
+        account.transform.Find("Tweet1").GetComponent<TextMesh>().text = getTweet.tweets[0];
+        account.transform.Find("Tweet2").GetComponent<TextMesh>().text = getTweet.tweets[1];
+        account.transform.Find("Tweet3").GetComponent<TextMesh>().text = getTweet.tweets[2];
+        account.transform.Find("Tweet4").GetComponent<TextMesh>().text = getTweet.tweets[3];
+        //getTweet.SearchTweet(textMesh.text);
+        for (int i = 0; i < 4; i++)
+        {
+            Debug.Log(getTweet.tweets[i]);
+        }
         Keyboard.Instance.OnTextUpdated -= KeyboardOnTextUpdated;
         Keyboard.Instance.OnClosed -= KeyboardOnClosed;
     }

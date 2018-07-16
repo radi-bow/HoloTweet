@@ -223,6 +223,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textMesh: {fileID: 1077518693}
   getTweet: {fileID: 2023314953}
+  virtualAccount: {fileID: 1666404136518374, guid: 7dff7e79cef4169469722bbeff3f07cb,
+    type: 2}
 --- !u!102 &1077518693 stripped
 TextMesh:
   m_PrefabParentObject: {fileID: 102000010767390410, guid: 2702ecab89b993642b714ec200597bbb,
@@ -583,6 +585,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4521e2376409f7e4383ba28aa5180cd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tweets: []
 --- !u!4 &2023314954
 Transform:
   m_ObjectHideFlags: 0

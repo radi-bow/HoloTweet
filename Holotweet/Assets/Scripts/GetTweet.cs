@@ -4,10 +4,12 @@ using UnityEngine;
 using Twity.DataModels.Responses;
 
 public class GetTweet : MonoBehaviour {
-
+    public string[] tweets;
     // Use this for initialization
     void Start()
     {
+        tweets = new string[4];
+
         Dictionary<string, string> parameters = new Dictionary<string, string>();
         parameters["count"] = 30.ToString();
         parameters["screen_name"] = "radi_bow";
@@ -26,7 +28,7 @@ public class GetTweet : MonoBehaviour {
             StatusesHomeTimelineResponse Response = JsonUtility.FromJson<StatusesHomeTimelineResponse>(response);
             for(int i = 0;i< 4; i++)
             {
-                Debug.Log(Response.items[i].text);
+                tweets[i] = Response.items[i].text;
             }
         }
         else
