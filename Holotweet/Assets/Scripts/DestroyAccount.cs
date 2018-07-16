@@ -18,11 +18,7 @@ public class DestroyAccount : MonoBehaviour, IInputClickHandler
 
     public void OnInputClicked(InputClickedEventData eventData)
     {
-        Destroy(gameObject);
+        //Destroy(gameObject);
     }
 
-    /*public void OnDestroy()
-    {
-        Destroy(gameObject);
-    }*/
 }

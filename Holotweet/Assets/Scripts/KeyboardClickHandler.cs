@@ -8,6 +8,11 @@ public class KeyboardClickHandler : MonoBehaviour, IInputClickHandler
     public GetTweet getTweet;
     public GameObject virtualAccount;
 
+    void Start()
+    {
+        getTweet = GameObject.Find("GetTweet").GetComponent<GetTweet>();
+    }
+
     public void OnInputClicked(InputClickedEventData eventData)
     {
         Keyboard.Instance.Close();
@@ -24,7 +29,7 @@ public class KeyboardClickHandler : MonoBehaviour, IInputClickHandler
     }
     private void KeyboardOnClosed(object sender, EventArgs eventArgs)
     {
-        GameObject account = Instantiate(virtualAccount, new Vector3(-0.5f, 0, 2.0f), Quaternion.identity);
+        GameObject account = Instantiate(virtualAccount, new Vector3(0, 0, 2.0f), Quaternion.identity);
         account.transform.Find("Tweet1").GetComponent<TextMesh>().text = getTweet.tweets[0];
         account.transform.Find("Tweet2").GetComponent<TextMesh>().text = getTweet.tweets[1];
         account.transform.Find("Tweet3").GetComponent<TextMesh>().text = getTweet.tweets[2];
@@ -36,5 +41,6 @@ public class KeyboardClickHandler : MonoBehaviour, IInputClickHandler
         }
         Keyboard.Instance.OnTextUpdated -= KeyboardOnTextUpdated;
         Keyboard.Instance.OnClosed -= KeyboardOnClosed;
+        Destroy(transform.root.gameObject);
     }
 }

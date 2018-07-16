@@ -7,6 +7,7 @@ using UnityEngine.Windows.Speech;
 public class SpeechManager : MonoBehaviour
 {
     public GazeManager gazeManager;
+    public GameObject showKeyboard;
 
     KeywordRecognizer keywordRecognizer = null;
     Dictionary<string, System.Action> keywords = new Dictionary<string, System.Action>();
@@ -14,6 +15,14 @@ public class SpeechManager : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        keywords.Add("Start", () =>
+        {
+            if (!GameObject.Find("ShowKeyboard(Clone)"))
+            {
+                Instantiate(showKeyboard, new Vector3(0, 0, 2.0f), Quaternion.identity);
+            }
+        });
+
         keywords.Add("Finish", () =>
         {
             var focusObject = gazeManager.HitObject;
