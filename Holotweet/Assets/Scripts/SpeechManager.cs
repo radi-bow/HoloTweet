@@ -19,7 +19,8 @@ public class SpeechManager : MonoBehaviour
         {
             if (!GameObject.Find("ShowKeyboard(Clone)"))
             {
-                Instantiate(showKeyboard, new Vector3(0, 0, 2.0f), Quaternion.identity);
+                Transform pos = GameObject.Find("Cursor").GetComponent<Transform>();
+                Instantiate(showKeyboard, pos.position, pos.rotation * Quaternion.Euler(0,180,0));
             }
         });
 
