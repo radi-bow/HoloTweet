@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 33004287329327940}
   - component: {fileID: 65503590400557254}
   - component: {fileID: 23851382345487286}
+  - component: {fileID: 114770450594736390}
   m_Layer: 0
   m_Name: icon
   m_TagString: Account
@@ -105,7 +106,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4174611975062910}
-  - component: {fileID: 114804444821075264}
   m_Layer: 0
   m_Name: VirtualAccount
   m_TagString: Account
@@ -119,13 +119,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1025524206828462}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
   m_Children: []
   m_Father: {fileID: 4174611975062910}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!4 &4174611975062910
 Transform:
   m_ObjectHideFlags: 1
@@ -177,7 +177,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1369035768021634}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.2, z: 0}
+  m_LocalPosition: {x: 0, y: 0.3, z: 0}
   m_LocalScale: {x: 0.005, y: 0.005, z: 0.005}
   m_Children: []
   m_Father: {fileID: 4174611975062910}
@@ -469,14 +469,14 @@ TextMesh:
   m_Color:
     serializedVersion: 2
     rgba: 4294967295
---- !u!114 &114804444821075264
+--- !u!114 &114770450594736390
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1666404136518374}
+  m_GameObject: {fileID: 1025524206828462}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 40c15fa364b9280439f7f6d3e826571e, type: 3}
+  m_Script: {fileID: 11500000, guid: 3029c4fac735ad5438b4d52847c6f0a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

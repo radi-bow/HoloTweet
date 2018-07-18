@@ -26,10 +26,12 @@ public class KeyboardClickHandler : MonoBehaviour, IInputClickHandler
     {
         textMesh.text = "@" + s;
         getTweet.SearchTweet(s);
+        getTweet.GetAccountImage(s);
     }
     private void KeyboardOnClosed(object sender, EventArgs eventArgs)
     {
         GameObject account = Instantiate(virtualAccount, this.transform.position, this.transform.rotation);
+        account.transform.Find("icon").transform.Rotate(new Vector3(0f, 90f, 0f));
         account.transform.Find("Tweet1").GetComponent<TextMesh>().text = getTweet.tweets[0];
         account.transform.Find("Tweet2").GetComponent<TextMesh>().text = getTweet.tweets[1];
         account.transform.Find("Tweet3").GetComponent<TextMesh>().text = getTweet.tweets[2];

@@ -5,6 +5,7 @@ using Twity.DataModels.Responses;
 
 public class GetTweet : MonoBehaviour {
     public string[] tweets;
+    public string url;
     // Use this for initialization
     void Start()
     {
@@ -53,6 +54,28 @@ public class GetTweet : MonoBehaviour {
         parameters["count"] = 4.ToString();
         parameters["screen_name"] = s;
         StartCoroutine(Twity.Client.Get("statuses/user_timeline", parameters, Callback));
+    }
+
+    void ImageCallback(bool success, string response)
+    {
+        if (success)
+        {
+            StatusesHomeTimelineResponse Response = JsonUtility.FromJson<StatusesHomeTimelineResponse>(response);
+            url = Response.items[0].user.profile_image_url;
+            Debug.Log(url);
+        }
+        else
+        {
+            Debug.Log(response);
+        }
+    }
+
+    public void GetAccountImage(string s)
+    {
+        Dictionary<string, string> parameters = new Dictionary<string, string>();
+        parameters["count"] = 1.ToString();
+        parameters["screen_name"] = s;
+        StartCoroutine(Twity.Client.Get("statuses/user_timeline", parameters, ImageCallback));
     }
 }
 
