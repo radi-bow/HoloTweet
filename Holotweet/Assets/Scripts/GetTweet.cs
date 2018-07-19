@@ -10,11 +10,6 @@ public class GetTweet : MonoBehaviour {
     void Start()
     {
         tweets = new string[4];
-
-        /*Dictionary<string, string> parameters = new Dictionary<string, string>();
-        parameters["count"] = 30.ToString();
-        parameters["screen_name"] = "radi_bow";
-        StartCoroutine(Twity.Client.Get("statuses/user_timeline", parameters, Callback));*/
     }
 
     // Update is called once per frame
