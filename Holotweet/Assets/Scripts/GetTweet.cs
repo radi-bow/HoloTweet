@@ -11,10 +11,10 @@ public class GetTweet : MonoBehaviour {
     {
         tweets = new string[4];
 
-        Dictionary<string, string> parameters = new Dictionary<string, string>();
+        /*Dictionary<string, string> parameters = new Dictionary<string, string>();
         parameters["count"] = 30.ToString();
         parameters["screen_name"] = "radi_bow";
-        StartCoroutine(Twity.Client.Get("statuses/user_timeline", parameters, Callback));
+        StartCoroutine(Twity.Client.Get("statuses/user_timeline", parameters, Callback));*/
     }
 
     // Update is called once per frame
@@ -34,7 +34,7 @@ public class GetTweet : MonoBehaviour {
                 for(int j = 0;j< rawString.Length; j++)
                 {
                     tweet += rawString[j];
-                    if(j % 10 == 9)
+                    if(j % 12 == 11)
                     {
                         tweet += "\n";
                     }
