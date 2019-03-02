@@ -1,5 +1,8 @@
 # HoloTweet
 研究室居室の空間にTwitterのアカウントを紐付けることで，たとえその人が現実にいなくとも普段はそこにいるのだという存在感を感じさせるシステムのプロトタイプです．
+<img src="image01.png" width="500px">
+<img src="image02.png" width="500px">
+
 ## How To Use
 * Unity 2017.4.6f1とHoloLensで動作確認をしました． **現在.NET周りのバグによりHoloLens単体では動かないため，Unity Editor上からHolographic Remoting Playerを用いて動かしてください**．  
 * 最初にOAuth認証のためのキーを読み込むクラスを作る必要があります．まずhttps://apps.twitter.com/ にアクセスして自分のTwitterアカウントでログインし，`Create New App`から新しいアプリケーションを作ります．その後`Keys and Access Tokens`タブから，`Consumer Key`,`Consumer Secret`,`Access Token`,`Access Token Secret`を取得してください．
